@@ -85,17 +85,36 @@
 						
 						<div class="row">
 							<div class="col-8 col-12-small">
-
-								<form action="https://formspree.io/f/xjvpwpnj" method="POST">
+<!-- FORM action="https://formspree.io/f/xjvpwpnj" -->
+								<form id="contactform" 
+								action="https://formsubmit.co/szdravkov93@gmail.com" 
+								method="POST"
+								>
 									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="_replyto" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+										<div class="col-6 col-12-xsmall">
+											<input id="name" 
+											type="text" 
+											name="name"  
+											placeholder="Name" /></div>
+										<div class="col-6 col-12-xsmall">
+											<input id="email" 
+											type="email" 
+											name="_replyto" 
+											placeholder="Email" /></div>
+										<div class="col-12">
+											<textarea name="message" 
+											type='text'
+											id="message" 
+											placeholder="Message" 
+											rows="4"></textarea></div>
+										<!-- <input type="text" name="_gotcha" style="display:none" /> -->
 									</div>
 								</form>
 
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
+									<!-- BUTTON -->
+									<li><input type="submit" value="Send Message" id="my-form-button"/></li>
+									<li><p id="my-form-status"></p></li>
 								</ul>
 							</div>
 							<div class="col-4 col-12-small">
@@ -133,14 +152,61 @@
 			</footer>
 
 		<!-- Scripts -->
-		<!-- <script src="jquery-2.1.0.min.js"></script> -->
-			<!-- <script src="assets/js/contact.js"></script> -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		
+<!-- <script>
+	window.addEventListener("DOMContentLoaded", function() {
+  
+	  // get the form elements defined in your form HTML above
+	  
+	  var form = document.getElementById("my-form");
+	  var button = document.getElementById("my-form-button");
+	  var status = document.getElementById("my-form-status");
+  
+	  // Success and Error functions for after the form is submitted
+	  
+	  function success() {
+		form.reset();
+		button.style = "display: none ";
+		status.innerHTML = "Thanks!";
+	  }
+  
+	  function error() {
+		status.innerHTML = "Oops! There was a problem.";
+	  }
+  
+	  // handle the form submission event
+  
+	  form.addEventListener("submit", function(ev) {
+		ev.preventDefault();
+		var data = new FormData(form);
+		console.log(form);
+		ajax(form.method, form.action, data, success, error);
+	  });
+	});
+	
+	// helper function for sending an AJAX request
+  
+	function ajax(method, url, data, success, error) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.open(method, url);
+	  xhr.setRequestHeader("Accept", "application/json");
+	  xhr.onreadystatechange = function() {
+		if (xhr.readyState !== XMLHttpRequest.DONE) return;
+		if (xhr.status === 200) {
+		  success(xhr.response, xhr.responseType);
+		} else {
+		  error(xhr.status, xhr.response, xhr.responseType);
+		}
+	  };
+	  xhr.send(data);
+	}
+  </script> -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 
 	</body>
 </html>
